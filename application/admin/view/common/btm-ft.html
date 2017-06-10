@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+{include file="../application/common/view/common/head.html" /}
+<body>
+
+<div class="main-wrap">
+    <div class="side-nav">
+        <div class="side-logo">
+            <div class="logo">
+				<span class="logo-ico">
+					<i class="i-l-1"></i>
+					<i class="i-l-2"></i>
+					<i class="i-l-3"></i>
+				</span>
+                <strong>模块化后台管理模板</strong>
+            </div>
+        </div>
+
+        <nav class="side-menu content mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <h2>
+                <a href="#" class="InitialPage"><i class="icon-dashboard"></i>首页</a>
+            </h2>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>
+                            <i class="icon-columns"></i>用户管理<i class="icon-angle-right"></i>
+                        </dt>
+                        <dd>
+                            <a href="{:url('admin/admin/lst')}">用户列表</a>
+                        </dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <i class="icon-inbox"></i>护照管理<i class="icon-angle-right"></i>
+                        </dt>
+
+                        <dd>
+                        <a href="{:url('admin/passport/lst')}">护照列表</a>
+                    </dd>
+                        <dd>
+                            <a href="{:url('admin/passportBorrow/borrow')}">护照借出</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <i class="icon-table"></i>表格UI<i class="icon-angle-right"></i>
+                        </dt>
+                        <dd>
+                            <a href="table.html">基础表格</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <i class="icon-list-alt"></i>表单UI<i class="icon-angle-right"></i>
+                        </dt>
+                        <dd>
+                            <a href="form.html">表单结构样式</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <i class="icon-external-link"></i>弹出窗口<i class="icon-angle-right"></i>
+                        </dt>
+                        <dd>
+                            <a href="popups.html">基础弹出层</a>
+                        </dd>
+                    </dl>
+                </li>
+
+            </ul>
+        </nav>
+        <footer class="side-footer">© DeathGhost 版权所有</footer>
+    </div>
+    <div class="content-wrap">
+        <header class="top-hd">
+            <div class="hd-lt">
+                <a class="icon-reorder"></a>
+            </div>
+            <div class="hd-rt">
+                <ul>
+                    <li>
+                        <a href="#" target="_blank"><i class="icon-home"></i>前台访问</a>
+                    </li>
+                    <li>
+                        <a><i class="icon-random"></i>清除缓存</a>
+                    </li>
+                    <li>
+                        <a><i class="icon-user"></i>管理员:<em>DeathGhost</em></a>
+                    </li>
+                    <li>
+                        <a><i class="icon-bell-alt"></i>系统消息</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" id="JsSignOut"><i class="icon-signout"></i>安全退出</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <footer class="btm-ft">
+            <p class="clear">
+                <span class="fl">©Copyright 2016 <a href="#" title="DeathGhost" target="_blank">DeathGhost.cn</a></span>
+                <span class="fr text-info">
+					<em class="uppercase">
+						<i class="icon-user"></i>
+						author:deathghost
+					</em> | 
+					<em class="uppercase"><i class="icon-envelope-alt"></i>
+						更多模板： <a href="http://www.mycodes.net/" target="_blank">源码之家</a>
+					</em>
+					<a onclick="reciprocate()" class="text-primary"><i class="icon-qrcode"></i>捐赠</a>
+				</span>
+            </p>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

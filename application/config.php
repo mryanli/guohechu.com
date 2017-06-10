@@ -140,8 +140,8 @@ return [
         'taglib_end' => '}',
 
 
-        'layout_on' => true,
-        'layout_name' => '../../common/view/common',
+        'layout_on' =>false,
+        'layout_name' => '/common/common',
         'layout_item' => '{__REPLACE__}',
 
 

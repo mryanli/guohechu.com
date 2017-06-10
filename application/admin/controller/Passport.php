@@ -15,6 +15,8 @@ class Passport extends Controller
 {
     function lst()
     {
+
+        $this->view->engine->layout(true);
         if($this->request->isGet()){
             $name='%'.input('name').'%';
             $num='%'.input('num').'%';
@@ -35,6 +37,7 @@ class Passport extends Controller
 
     function add()
     {
+        $this->view->engine->layout(true);
         if(\request()->isPost()){
             $data=input();
             Db::table('passport')->insert($data);
@@ -46,6 +49,7 @@ class Passport extends Controller
 
     function edit()
     {
+        $this->view->engine->layout(true);
         if($this->request->isPost()){
             $data=input();
             $data=Db::name('passport')->update($data);
@@ -59,6 +63,7 @@ class Passport extends Controller
 
     function del()
     {
+        $this->view->engine->layout(true);
         if($this->request->isGet()){
             $id=input('id');
             Db::name('passport')->delete($id);
