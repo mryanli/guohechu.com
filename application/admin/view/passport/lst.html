@@ -1,81 +1,83 @@
+<main class="main-cont content mCustomScrollbar" xmlns="http://www.w3.org/1999/html">
 
-		<main class="main-cont content mCustomScrollbar">
-			<div class="page-wrap">
-				<!--开始::内容-->
-				<section class="page-hd">
-					<header>
-						<h2 class="title">护照信息</h2>
-						<p class="title-description">
-							<a href="#">护照管理></a>
+    <div class="page-wrap">
+        <!--开始::内容-->
+        <section class="page-hd">
+            <header>
+                <h2 class="title">护照管理</h2>
+                <p class="title-description">
+                    <a href="#">护照列表></a>
 
-						</p>
-					</header>
-					<hr>
-				</section>
-				<table class="table table-bordered table-striped table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>姓名</th>
-							<th>出生日期</th>
-							<th>护照号</th>
-							<th>失效日期</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="cen">
-							<td>#001</td>
-							<td ><a href="#">张三</a></td>
-							<td>2011-5-15</td>
-							<td>PE0515154</td>
-							<td>2022-6-12</td>
-							<td>
-								<a title="编辑" class="mr-5">编辑</a>
-								<a title="详情" class="mr-5">详情</a>
-								<a title="删除">删除</a>
-							</td>
-						</tr>
-						<tr class="cen">
-							<td>#001</td>
-							<td ><a href="#">张三</a></td>
-							<td>2011-5-15</td>
-							<td>PE0515154</td>
-							<td>2022-6-12</td>
-							<td>
-								<a title="编辑" class="mr-5">编辑</a>
-								<a title="详情" class="mr-5">详情</a>
-								<a title="删除">删除</a>
-							</td>
-						</tr>
-						<tr class="cen">
-							<td>#001</td>
-							<td ><a href="#">张三</a></td>
-							<td>2011-5-15</td>
-							<td>PE0515154</td>
-							<td>2022-6-12</td>
-							<td>
-								<a title="编辑" class="mr-5">编辑</a>
-								<a title="详情" class="mr-5">详情</a>
-								<a title="删除">删除</a>
-							</td>
-						</tr>
-						<tr class="cen">
-							<td>#001</td>
-							<td ><a href="#">张三</a></td>
-							<td>2011-5-15</td>
-							<td>PE0515154</td>
-							<td>2022-6-12</td>
-							<td>
-								<a title="编辑" class="mr-5">编辑</a>
-								<a title="详情" class="mr-5">详情</a>
-								<a title="删除">删除</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<button class="btn btn-primary-outline" onclick="window.location='{:url('admin/passport/add')}'">新增护照</button>
-				<!--开始::结束-->
-			</div>
-		</main>
+                </p>
+            </header>
+            <hr>
+            <button class="btn btn-primary-outline" onclick="window.location='{:url('admin/passport/add')}'">新增护照
+            </button>
+
+            <form action="" method="get" style="display: inline;">
+                <input type="tel" placeholder="姓名" class="form-control form-boxed"
+                       style="width:150px;margin-left: 150px;" name="name"/>
+                <input type="tel" placeholder="护照号" class="form-control form-boxed" style="width:150px;" name="num"/>
+                <input type="submit" value="查询" btn-secondary-outline" class="btn btn-primary"></input>
+            </form>
+
+
+        </section>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>姓名</th>
+                <th>出生日期</th>
+                <th>护照号</th>
+                <th>失效日期</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="data" id="vo"}
+
+
+            <tr class="cen">
+                <td>{$vo.id}</td>
+                <td><a href="#">{$vo.name}</a></td>
+                <td>{$vo.birthday}</td>
+                <td>{$vo.num}</td>
+                <td>{$vo.end_time}</td>
+                <td>
+                    <a title="编辑" class="mr-5" href="{:url('edit',['id'=>$vo.id])}">编辑</a>
+                    <a title="详情" class="mr-5" href="{:url('info',['id'=>$vo.id])}">详情</a>
+                    <a title="删除" style="color: red;" href="{:url('del',['id'=>$vo.id])}" onclick="return myFunction()">删除</a>
+                </td>
+
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+        <div id="pagination-passport" class="pagination">
+            {$page}
+        </div>
+
+        <!--对话框-->
+        <script>
+            function myFunction() {
+                var r = confirm("确定要删除该数据吗？");
+                if (r == true) {
+                   return true;
+                }
+                else {
+                   return false;
+                }
+            }
+        </script>
+
+        <style>
+            #pagination-passport li {
+                display: inline;
+            }
+        </style>
+
+        <!--开始::结束-->
+    </div>
+</main>
 
