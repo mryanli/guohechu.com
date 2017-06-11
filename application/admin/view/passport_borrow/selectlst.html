@@ -79,7 +79,7 @@
 
     function select(obj) {
 
-        var inner = "<tr class='cen'>" + obj.innerHTML + '<td>删除</td></tr>';
+        var inner = "<tr class='cen'>" + obj.innerHTML + "<td><a onclick='deleteSelf(this);'>删除</a></td></tr>";
         var y = parent.document.getElementById('parenttable').getElementsByTagName('tbody');
         y[0].innerHTML += inner;
 //        parent.layer.close(index);

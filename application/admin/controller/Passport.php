@@ -37,6 +37,7 @@ class Passport extends Controller
 
     function add()
     {
+        echo "222";die;
         $this->view->engine->layout(true);
         if(\request()->isPost()){
             $data=input();

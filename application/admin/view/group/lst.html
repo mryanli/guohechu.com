@@ -35,26 +35,22 @@
                 <th>天数</th>
                 <th>申请出境</th>
                 <th>操作</th>
-
-
-
             </tr>
             </thead>
             <tbody>
             {volist name="data" id="vo"}
-
-
             <tr class="cen">
                 <td>{$vo.id}</td>
                 <td>{$vo.inner_num}</td>
                 <td><a href="#">{$vo.group_name}</a></td>
                 <td>{$vo.place}</td>
+                <td>{$vo.plan_back_time-$vo.plan_start_time}</td>
                 <td>{$vo.total_people}</td>
-                <td>{$vo.plan_star_time}</td>
+                <td>{$vo.plan_start_time}</td>
                 <td>
                     <a title="编辑" class="mr-5" href="{:url('edit',['id'=>$vo.id])}">编辑</a>
                     <a title="详情" class="mr-5" href="{:url('info',['id'=>$vo.id])}">详情</a>
-                    <a title="删除" style="color: red;" href="{:url('del',['id'=>$vo.id])}" onclick="return myFunction()">删除</a>
+                    <a title="删除" style="color: red;" href="javascript:void(0);" onclick="return myDelete('{:url('del',['id'=>$vo.id])}')">删除1</a>
                 </td>
 
             </tr>
@@ -68,13 +64,26 @@
         <!--对话框-->
         <script>
             function myFunction() {
-                var r = confirm("确定要删除该数据吗？");
+                var r = confirm("确定要删除该数据吗?");
                 if (r == true) {
                    return true;
                 }
                 else {
                    return false;
                 }
+            }
+//
+            function myDelete(url) {
+
+                layer.confirm('你确定要删除吗?', {
+                    btn: ['确定删除', '不想删除'] //按钮
+                }, function () {
+                      window.location=url;
+                }, function () {
+
+
+                });
+
             }
         </script>
 

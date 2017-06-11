@@ -30,6 +30,7 @@ class PassportBorrow extends Controller
 
     function selectlst()//选择护照的界面
     {
+
         if($this->request->isGet()){
             $name='%'.input('name').'%';
             $num='%'.input('num').'%';
@@ -45,7 +46,7 @@ class PassportBorrow extends Controller
         $page = $data->render();
         $this->assign('data', $data);
         $this->assign('page', $page);
-        $this->view->engine->layout_on=false;
+
         $this->view->engine->layout(false);
         return $this->fetch();
     }

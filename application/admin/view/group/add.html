@@ -1,11 +1,11 @@
 <main class="main-cont content mCustomScrollbar">
     <div class="page-wrap">
         <!--开始::内容-->
-        <section  style="margin-top: -30px;display: flex;flex-direction: row;vertical-align: middle;" class="page-hd">
-            <header  style="padding-right: 200px;">
+        <section style="margin-top: -30px;display: flex;flex-direction: row;vertical-align: middle;" class="page-hd">
+            <header style="padding-right: 200px;">
                 <h2 class="title">团组管理</h2>
                 <p class="title-description">
-                    <a href="#">团组列表></a>
+                    <a href="#">团组新增></a>
 
                 </p>
 
@@ -14,111 +14,189 @@
 
         </section>
         <hr>
-        <form action="{:url('admin/passport/add')}" method="post">
-        <table style="margin-left: 100px;">
-            <tr>
-                <td>
-                    <div class="form-group-col-2">
-                        <div class="form-label">姓名：</div>
-                        <div class="form-cont">
-                            <input type="text" placeholder="不用空格" class="form-control form-boxed" name="name"
-                                   style="width: 190px"><span class="word-aux" style="color:red;">*</span>
+        <form action="{:url('admin/group/add')}" method="post">
+            <table style="margin-left: 100px;margin-top: 10px;">
+                <tr>
+                    <td>
+                        <div class="form-group-col-2">
+                            <div class="form-label">院合申发</div>
+                            <div class="form-cont">
+                                <input type="text" placeholder="" class="form-control form-boxed" name="inner_num"
+                                       value="院合申发（2017）号"
+                                       style="width: 190px"><span class="word-aux" style="color:red;">*</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group-col-2">
-                        <div class="form-label">姓名拼音</div>
-                        <div class="form-cont">
-                            <input type="text" placeholder="和护照一致" class="form-control form-boxed" style="width: 190px" name="name_pinyin">
 
-                            <span class="word-aux" style="color:red;">*</span>
-                        </div>
-                    </div>
-                    <div class="form-group-col-2">
-                        <div class="form-label">性别：</div>
-                        <div class="form-cont">
-                            <label class="radio">
-                                <input type="radio" name="sex" value="1" />
-                                <span>男士</span>
-                            </label>
-                            <label class="radio">
-                                <input type="radio" name="sex" checked="checked" value="0"/>
-                                <span>女士</span>
-                            </label>
-                            <label class="radio">
-                                <input type="radio" name="sex" value="2"/>
-                                <span>其他</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group-col-2">
-                        <div class="form-label">身份证号2</div>
-                        <div class="form-cont">
-                            <input type="number" class="form-control form-boxed" style="width: 190px" name="identy_num">
-                        </div>
-                    </div>
+                        <div class="form-group-col-2">
+                            <div class="form-label">团组名称</div>
+                            <div class="form-cont">
+                                <input type="text" placeholder="" class="form-control form-boxed" style="width: 190px"
+                                       name="group_name">
 
-                    <div class="form-group-col-2">
-                        <div class="form-label">出生日期</div>
-                        <div class="form-cont">
-                            <input type="date" class="form-control form-boxed" style="width: 190px" name="birthday">
+                                <span class="word-aux" style="color:red;">*</span>
+                            </div>
                         </div>
-                    </div>
-                </td>
 
-                <td>
-                    <div class="form-group-col-2">
-                        <div class="form-label">出生地</div>
-                        <div class="form-cont">
-                            <input type="text" placeholder="不用空格1" class="form-control form-boxed" name="birth_place"
-                                   style="width: 190px"><span class="word-aux" style="color:red;">*</span>
+                        <div class="form-group-col-2">
+                            <div class="form-label">团组性质</div>
+                            <div class="form-cont">
+                                <select style="width:auto;" name="zutuan_xingzhi">
+                                    <option value="参加会议">参加会议</option>
+                                    <option value="交流">交流</option>
+                                    <option value="商贸洽谈">商贸洽谈</option>
+                                    <option value="留学">留学</option>
+                                    <option value="项目验收">项目验收</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group-col-2">
-                        <div class="form-label">护照号：</div>
-                        <div class="form-cont">
-
-                            <input type="text" class="form-control form-boxed" style="width: 190px" name="num">
-
-
+                        <div class="form-group-col-2">
+                            <div class="form-label">计划内/外</div>
+                            <div class="form-cont">
+                                <label class="radio">
+                                    <input type="radio" name="plan_in_out" value="0"/>
+                                    <span>计划外</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="plan_in_out" checked="checked" value="1"/>
+                                    <span>计划内</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="plan_in_out" value="2"/>
+                                    <span>其他</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group-col-2">
-                        <div class="form-label">签发日期：</div>
-                        <div class="form-cont">
-                            <input type="date" placeholder="签发日期..." class="form-control form-boxed" style="width: 190px" name="start_time">
-                        </div>
-                    </div>
-                    <div class="form-group-col-2">
-                        <div class="form-label">失效日期：</div>
-                        <div class="form-cont">
-                            <input style="width:190px;" class="form-control form-boxed" type="date" value="" name="end_time"/>
-                        </div>
-                    </div>
-                    <div class="form-group-col-2">
-                        <div class="form-label">状态：</div>
-                        <div class="form-cont">
+                        <div class="form-group-col-2">
+                            <div class="form-label">计划号</div>
+                            <div class="form-cont">
+                                <input type="text" placeholder="" class="form-control form-boxed" style="width: 190px"
+                                       name="plan_num" value="核动力号">
 
-                            <select style="width:auto;" name="status">
-                                <option value="1">在库</option>
-                                <option value="0">借出</option>
-                                <option value="2">销毁</option>
-                            </select>
+                                <span class="word-aux" style="color:red;">*</span>
+                            </div>
                         </div>
-                    </div>
+                    </td>
 
-                </td>
-            </tr>
-        </table>
-        <div><br/></div>
-        <div style="margin-left: 350px;">
-            <div class="form-label"></div>
-            <div class="form-cont">
-                <input type="submit" class="btn btn-primary" value="提交表单"/>
-                <input type="reset" class="btn btn-disabled" value="禁止"/>
+                    <td>
+                        <div class="form-group-col-2">
+                            <div class="form-label">总人数</div>
+                            <div class="form-cont">
+                                <input type="text" class="form-control form-boxed" style="width: 190px"
+                                       name="total_people">
+                            </div>
+                        </div>
+
+                        <div class="form-group-col-2">
+                            <div class="form-label">申请出访时间
+                            </div>
+                            <div class="form-cont">
+                                <input type="date" class="form-control form-boxed" style="width: 190px"
+                                       name="plan_start_time">
+                            </div>
+                        </div>
+
+                        <div class="form-group-col-2">
+                            <div class="form-label">申请回国时间</div>
+                            <div class="form-cont">
+                                <input type="date" placeholder="不用空格1" class="form-control form-boxed"
+                                       name="plan_back_time"
+                                       style="width: 190px"><span class="word-aux" style="color:red;">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group-col-2">
+                            <div class="form-label">组团单位</div>
+                            <div class="form-cont">
+
+                                <input type="text" class="form-control form-boxed" style="width: 190px"
+                                       name="zutuan_danwei" placeholder="设计所?一所?">
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group-col-2">
+                            <div class="form-label">团组类别</div>
+                            <div class="form-cont">
+                                <select style="width:auto;" name="zutuan_leibie">
+                                    <option value="组团">组团</option>
+                                    <option value="参团">参团</option>
+                                    <option value="双跨组团">双跨组团</option>
+                                    <option value="双跨参团">双跨参团</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <div><br/></div>
+            <div style="margin-left: 350px;margin-top: -20px;">
+                <div class="form-label"></div>
+                <div class="form-cont">
+                    <input type="submit" class="btn btn-primary" value="新建团组"/>
+
+                    <button id="add_passport" type="button" class="btn btn-primary-outline" value="">添加成员</button>
+                    <button id="" style="margin-left: 300px;" type="button" class="btn btn-primary-outline" value=""
+                            onclick="cancel()">取消
+                    </button>
+                </div>
             </div>
-        </div>
+            <table id="parenttable" class="table mb-15" style="width:80%;align-self: center;margin-left: 100px;">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>姓名</th>
+                    <th>出生日期</th>
+                    <th>护照号</th>
+                    <th>失效日期</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
         </form>
         <!--开始::结束-->
     </div>
 </main>
+
+<script>
+    function deleteSelf(obj) {
+        var i=obj.parentNode.parentNode.rowIndex;
+        document.getElementById('parenttable').deleteRow(i);
+
+    }
+
+    function cancel() {
+        layer.confirm('你确定要取消吗?', {
+            btn: ['马上取消','再等一等'] //按钮
+        }, function(){
+            window.location='{:url('admin/group/lst')}';
+            layer.msg('尼玛，打个酱油', {icon: 4});
+        }, function(){
+            layer.msg('继续干', {
+                time: 1000, //20s后自动关闭
+
+            });
+        });
+
+    }
+
+    $('#add_passport').on('click', function () {
+
+        layer.open({
+            type: 2,
+            title: '添加护照',
+            fixed: false,
+            maxmin: true,
+            shadeClose: false, //点击遮罩关闭层
+            area: ['800px', '520px'],
+            content: "{:url('admin/passportBorrow/selectlst')}"
+        });
+
+    });
+</script>
