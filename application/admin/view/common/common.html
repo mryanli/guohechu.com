@@ -30,22 +30,33 @@
 					<i class="i-l-2"></i>
 					<i class="i-l-3"></i>
 				</span>
-                <strong>模块化后台管理模板</strong>
+                <strong>NPIC ICD</strong>
             </div>
         </div>
 
         <nav class="side-menu content mCustomScrollbar" data-mcs-theme="minimal-dark">
             <h2>
-                <a href="#" class="InitialPage"><i class="icon-dashboard"></i>首页</a>
+                <a href="{:url('admin/index/index')}" class="InitialPage"><i class="icon-dashboard"></i>首页</a>
             </h2>
             <ul>
+
                 <li>
                     <dl>
                         <dt>
-                            <i class="icon-columns"></i>用户管理<i class="icon-angle-right"></i>
+                            <i class="icon-table"></i>团组管理<i class="icon-angle-right"></i>
                         </dt>
+
                         <dd>
-                            <a href="{:url('admin/admin/lst')}">用户列表</a>
+                            <a href="{:url('admin/group/lst')}">团组列表</a>
+                        </dd>
+                        <dd>
+                            <a href="{:url('')}">团组查询</a>
+                        </dd>
+                        <dd>
+                            <a href="{:url('')}">出国计划</a>
+                        </dd>
+                        <dd>
+                            <a href="{:url('')}">团组统计</a>
                         </dd>
 
                     </dl>
@@ -57,47 +68,55 @@
                         </dt>
 
                         <dd>
-                        <a href="{:url('admin/passport/lst')}">护照列表</a>
-                    </dd>
+                            <a href="{:url('admin/passport/lst')}">护照列表</a>
+                        </dd>
                         <dd>
                             <a href="{:url('admin/passportBorrow/borrow')}">护照借出</a>
                         </dd>
-                    </dl>
-                </li>
-                <li>
-                    <dl>
-                        <dt>
-                            <i class="icon-table"></i>表格UI<i class="icon-angle-right"></i>
-                        </dt>
                         <dd>
-                            <a href="table.html">基础表格</a>
+                            <a href="{:url('admin/passportBorrow/back')}">护照归还</a>
                         </dd>
                     </dl>
                 </li>
                 <li>
                     <dl>
                         <dt>
-                            <i class="icon-list-alt"></i>表单UI<i class="icon-angle-right"></i>
+                            <i class="icon-table"></i>签证指南<i class="icon-angle-right"></i>
                         </dt>
                         <dd>
-                            <a href="form.html">表单结构样式</a>
+                        <a href="table.html">基础表格</a>
+                    </dd>
+                        <dd>
+                            <a href="table.html">各国要求</a>
                         </dd>
                     </dl>
                 </li>
                 <li>
                     <dl>
                         <dt>
-                            <i class="icon-external-link"></i>弹出窗口<i class="icon-angle-right"></i>
+                            <i class="icon-list-alt"></i>报批指南<i class="icon-angle-right"></i>
                         </dt>
                         <dd>
-                            <a href="popups.html">基础弹出层</a>
+                            <a href="form.html">出国材料</a>
                         </dd>
+                    </dl>
+                </li>
+
+                <li>
+                    <dl>
+                        <dt>
+                            <i class="icon-home"></i>用户管理<i class="icon-angle-right"></i>
+                        </dt>
+                        <dd>
+                            <a href="{:url('admin/admin/lst')}">用户列表</a>
+                        </dd>
+
                     </dl>
                 </li>
 
             </ul>
         </nav>
-        <footer class="side-footer">© DeathGhost 版权所有</footer>
+        <footer class="side-footer">© LBH 版权所有</footer>
     </div>
     <div class="content-wrap">
         <header class="top-hd">
@@ -106,18 +125,14 @@
             </div>
             <div class="hd-rt">
                 <ul>
-                    <li>
-                        <a href="#" target="_blank"><i class="icon-home"></i>前台访问</a>
-                    </li>
+
                     <li>
                         <a><i class="icon-random"></i>清除缓存</a>
                     </li>
                     <li>
-                        <a><i class="icon-user"></i>管理员:<em>DeathGhost</em></a>
+                        <a><i class="icon-user"></i>用户:<em>刘宝华</em></a>
                     </li>
-                    <li>
-                        <a><i class="icon-bell-alt"></i>系统消息</a>
-                    </li>
+
                     <li>
                         <a href="javascript:void(0)" id="JsSignOut"><i class="icon-signout"></i>安全退出</a>
                     </li>
@@ -127,16 +142,13 @@
         {__REPLACE__}
         <footer class="btm-ft">
             <p class="clear">
-                <span class="fl">©Copyright 2016 <a href="#" title="DeathGhost" target="_blank">DeathGhost.cn</a></span>
+                <span class="fl">©Copyright 2016 <a href="#" title="DeathGhost" target="_blank">LBH</a></span>
                 <span class="fr text-info">
 					<em class="uppercase">
 						<i class="icon-user"></i>
-						author:deathghost
+						author:LBH
 					</em> |
-					<em class="uppercase"><i class="icon-envelope-alt"></i>
-						更多模板： <a href="http://www.mycodes.net/" target="_blank">源码之家</a>
-					</em>
-					<a onclick="reciprocate()" class="text-primary"><i class="icon-qrcode"></i>捐赠</a>
+
 				</span>
             </p>
         </footer>

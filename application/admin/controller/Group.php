@@ -9,15 +9,24 @@
 namespace app\admin\controller;
 
 
-class Group
+use think\Controller;
+use think\Db;
+
+class Group extends Controller
 {
     function lst()
     {
+        $this->view->engine->layout(true);
+        $data=Db::table('group')->paginate(10);
+        $page=$data->render();
+        $this->assign('data',$data);
+        $this->assign('page',$page);
         return $this->fetch();
     }
 
     function add()
     {
+        $this->view->engine->layout(true);
         return $this->fetch();
     }
 

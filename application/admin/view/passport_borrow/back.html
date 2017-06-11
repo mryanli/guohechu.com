@@ -1,0 +1,85 @@
+<main class="main-cont content mCustomScrollbar" xmlns="http://www.w3.org/1999/html">
+
+    <div class="page-wrap">
+        <!--开始::内容-->
+        <section  style="margin-top: -30px;" class="page-hd">
+            <header>
+                <h2 class="title">护照管理</h2>
+                <p class="title-description">
+                    <a href="#">护照归还></a>
+
+                </p>
+            </header>
+            <hr>
+        </section>
+        <form action="" method="post" style="display: inline;">
+            <input type="tel" placeholder="姓名" class="form-control form-boxed"
+                   style="width:150px;margin-left: 150px;" name="name"/>
+            <input type="tel" placeholder="护照号1" class="form-control form-boxed" style="width:150px;" name="num"/>
+            <input type="submit" value="查询" btn-secondary-outline" class="btn btn-primary"></input>
+        </form>
+        <form action="{:url('admin/passportBorrow/back')}" method="post">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>id</th>
+                    <th>姓名</th>
+                    <th>出生日期</th>
+                    <th>护照号</th>
+                    <th>失效日期</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {volist name="data" id="vo"}
+                <tr class="cen">
+                    <th><input type="checkbox" name="back[]" value="{$vo.id}"></th>
+                    <td>{$vo.id}</td>
+                    <td><a href="#">{$vo.name}</a></td>
+                    <td>{$vo.birthday}</td>
+                    <td>{$vo.num}</td>
+                    <td>{$vo.end_time}</td>
+                    <td>
+                        <a title="编辑" class="mr-5" href="{:url('edit',['id'=>$vo.id])}">编辑</a>
+                        <a title="详情" class="mr-5" href="{:url('info',['id'=>$vo.id])}">详情</a>
+                        <a title="删除" style="color: red;" href="{:url('del',['id'=>$vo.id])}"
+                           onclick="return myFunction()">删除</a>
+                    </td>
+
+                </tr>
+                {/volist}
+
+                </tbody>
+            </table>
+            <input class="btn btn-primary-outline" type="submit" value="归还护照">
+            </input>
+        </form>
+        <div id="pagination-passport" class="pagination">
+            {$page}
+        </div>
+
+        <!--对话框-->
+        <script>
+            function myFunction() {
+                var r = confirm("确定要删除该数据吗？");
+                if (r == true) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        </script>
+
+        <style>
+            #pagination-passport li {
+                display: inline;
+            }
+        </style>
+
+        <!--开始::结束-->
+    </div>
+</main>
+
